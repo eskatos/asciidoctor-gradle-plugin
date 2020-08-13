@@ -1,3 +1,7 @@
+plugins {
+    id("com.gradle.enterprise") version "3.4"
+}
+
 rootProject.name = 'asciidoctor-gradle-plugin'
 
 include 'kindlegen-gradle'
@@ -21,4 +25,17 @@ include 'asciidoctoreditorconfig'
 [ 'gems' ].each {
     include it
     project(":${it}").name = "asciidoctor-gradle-jvm-${it}"
+}
+
+gradleEnterprise {
+    buildScan {
+        termsOfServiceUrl = 'https://gradle.com/terms-of-service'
+        termsOfServiceAgree = 'yes'
+
+        buildFinished { buildResult ->
+            buildScanPublished { scan ->
+                ['curl', '-s', '-d', "message=asciidoctor-gradle-plugin build scan: ${scan.buildScanUri}", 'https://webhooks.gitter.im/e/6ba348eef26407adc22a'].execute()
+            }
+        }
+    }
 }
