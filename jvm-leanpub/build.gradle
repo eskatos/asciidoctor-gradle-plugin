@@ -1,5 +1,5 @@
 dependencies {
-    compile project(':asciidoctor-gradle-jvm')
+    implementation project(':asciidoctor-gradle-jvm')
 
     intTestOfflineRepo "org.asciidoctor:asciidoctorj:${compileOnlyAsciidoctorJVersion}"
     intTestOfflineRepo "org.asciidoctor:asciidoctor-leanpub-markdown:${downloadOnlyLeanpubVersion}"

@@ -4,8 +4,8 @@ generateModuleVersions {
 }
 
 dependencies {
-    compile project(':asciidoctor-gradle-base')
-    compile project(':asciidoctor-gradle-jvm-gems')
+    implementation project(':asciidoctor-gradle-base')
+    implementation project(':asciidoctor-gradle-jvm-gems')
 }
 
 intTest {

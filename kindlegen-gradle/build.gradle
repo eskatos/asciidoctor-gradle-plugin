@@ -5,7 +5,7 @@ ext {
 }
 
 dependencies {
-    testRuntimeClasspath files(createClasspathManifest)
+    testRuntimeOnly files(createClasspathManifest)
 
     cachedBinaries.add "kindlegen:${OS.macOsX ? 'KindleGen' : 'kindlegen'}" +
             ":${moduleVersions.kindlegen}" +

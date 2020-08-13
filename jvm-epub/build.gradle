@@ -4,8 +4,8 @@ generateModuleVersions {
 }
 
 dependencies {
-    compile project(':asciidoctor-gradle-jvm')
-    compile project(':kindlegen-gradle')
+    implementation project(':asciidoctor-gradle-jvm')
+    implementation project(':kindlegen-gradle')
 
     intTestOfflineRepo "org.asciidoctor:asciidoctorj:${compileOnlyAsciidoctorJVersion}"
     intTestOfflineRepo "org.asciidoctor:asciidoctorj-epub3:${downloadOnlyEpubVersion}"

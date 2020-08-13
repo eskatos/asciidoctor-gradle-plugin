@@ -16,6 +16,7 @@ class AsciidoctorGradleGroovyProject implements Plugin<Project> {
     public final static String GENERATOR_NAME = 'generateModuleVersions'
 
     void apply(Project project) {
+        project.apply plugin: 'java-library'
         project.apply plugin: 'groovy'
 
         TaskProvider generateModuleVersions = project.tasks.register(GENERATOR_NAME, ModuleVersions)

@@ -25,7 +25,7 @@ dependencies {
         exclude module: 'groovy-all'
     }
 
-    compile project(':asciidoctor-gradle-base')
+    api project(':asciidoctor-gradle-base')
 
     // These three are used in the compatibility tests for extensions
     intTestOfflineRepo "org.codehaus.groovy:groovy:${GroovySystem.version}"
@@ -83,9 +83,9 @@ generateModuleVersions {
 }
 
 dependencies {
-    remoteTestCompile "org.asciidoctor:asciidoctorj:${compileOnlyAsciidoctorJVersion}"
-    remoteTestCompile project(':testfixtures-jvm')
-    remoteTestRuntime "org.asciidoctor:asciidoctorj-groovy-dsl:${compileOnlyGroovyDslVersion}", {
+    remoteTestImplementation "org.asciidoctor:asciidoctorj:${compileOnlyAsciidoctorJVersion}"
+    remoteTestImplementation project(':testfixtures-jvm')
+    remoteTestRuntimeOnly "org.asciidoctor:asciidoctorj-groovy-dsl:${compileOnlyGroovyDslVersion}", {
         exclude module: 'groovy-all'
     }
 }

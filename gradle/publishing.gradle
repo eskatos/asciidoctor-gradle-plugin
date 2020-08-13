@@ -165,8 +165,8 @@ publishing {
         mavenJava(MavenPublication) {
             from components.java
             afterEvaluate {
-                artifact sourcesJar.baseName
-                artifact javadocJar.baseName
+                artifact sourcesJar.archiveBaseName
+                artifact javadocJar.archiveBaseName
             }
             pom.withXml {
                 asNode().children().last() + pomConfig
