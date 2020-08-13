@@ -88,8 +88,9 @@ class AsciidoctorPdfThemesExtension extends AbstractDownloadableComponent<PdfLoc
      */
     @Override
     protected Closure convertible(PdfLocalTheme theme) {
+        def p = project
         return { ->
-            new PdfThemeDescriptor(StringUtils.stringize(theme.themeName), project.file(theme.themeDir))
+            new PdfThemeDescriptor(StringUtils.stringize(theme.themeName), p.file(theme.themeDir))
         }
     }
 
